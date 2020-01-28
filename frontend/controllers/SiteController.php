@@ -257,4 +257,9 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+    
+    public function actionTest($id, $params_for_filter)
+    {
+//        echo "<pre>"; print_r('st');die();
+    }
 }

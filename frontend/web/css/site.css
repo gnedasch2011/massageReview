@@ -118,3 +118,270 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.buttonSearch {
+    background-color: #DC0606;
+    border: 1px solid #DC0606;
+    color: #fff;
+}
+
+.wrapHeader {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+ul.full-width {
+    width: 100%; /* Ширина основного блока меню */
+    height: 50px; /* Высота основного блока меню */
+    position: relative;
+    display: table;
+    margin: 0;
+    padding: 0;
+}
+
+ul.full-width li {
+    display: table-cell;
+    position: relative;
+}
+
+ul.full-width li a {
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #1d1d1d;
+    line-height: 50px; /* Приравниваем к высоте, чтобы выровнять текст по вертикали */
+}
+
+ul.full-width li ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+    z-index: 1111;
+}
+
+ul.full-width li ul li {
+    display: block;
+}
+
+ul.full-width li:hover ul {
+    display: block; /* Показываем выпадающее меню, где оно есть, при наведении */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/openS/opensans.ttf');
+    font-weight: normal;
+
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
+.footerStyle {
+    background-color: #313131;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    padding-top: 55px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.footerH4 {
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footerP {
+    color: #999;
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 17px;
+    margin-bottom: 25px;
+}
+
+.footerMenuItem {
+    color: #999;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 21px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+
+.menuLiActive {
+    color: #DC0606 !important;
+    border-bottom: 2px solid #DC0606;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 35px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 27px;
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    line-height: 37px;
+    color: #111;
+    padding: 15px;
+}
+
+.content {
+    color: #3c3c3c;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menuWrap {
+    margin-bottom: 20px;
+}
+
+.block-margin {
+    display: block;
+    height: 100px;
+}
+
+.card-cat-h3 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.article {
+    border-bottom: 1px solid #ddd;
+}
+
+.inner-page {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.inner-page-h2 {
+    font-size: 28px;
+    line-height: 35px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.block-quote {
+    padding: 60px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.table-of-content {
+    background: #f9f9f9;
+    border: 1px solid #aaa;
+    padding: 10px;
+    margin-bottom: 1em;
+    width: auto;
+    display: table;
+    font-size: 95%;
+}
+
+.goodsFeatures {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    border-bottom: 1px solid #9dcce3;
+    border-top: 1px solid #9dcce3;
+    color: #6299b2;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.amazonGoodsButton {
+    margin: 20px;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-color: #fff;
+    width: 247px;
+    height: 38px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgba(82, 194, 206, 1);
+    -webkit-box-shadow: 0 0 2px 0 #333;
+    -moz-box-shadow: 0 0 2px 0 #333;
+    box-shadow: 0 0 2px 0 #333;
+}
+
+.amazonGoodsButton:hover {
+    border-color: #52c2ce;
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0 0 2px 0 #333;
+    -moz-box-shadow: 0 0 2px 0 #333;
+    box-shadow: 0 0 2px 0 #333;
+    color: #333;
+}
+
+.tableGoods {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 0 1.5em;
+    width: 100%;
+    border-top: 1px solid #e6e6e6;
+    border-left: 1px solid rgba(0, 0, 0, .07);
+}
+
+.table-props {
+    border: 1px solid #ddd;
+}
+
+/*.su-list ul li > i {*/
+/*position: absolute;*/
+/*left: 0;*/
+/*top: 4px;*/
+/*width: 1.3em;*/
+/*height: 1.3em;*/
+/*line-height: 1.3em;*/
+/*text-align: center;*/
+/*}*/
+
+/*.sui {*/
+/*color: #38f24a;*/
+/*display: inline-block;*/
+/*font: normal normal normal 14px/1 ShortcodesUltimateIcons;*/
+/*font-size: inherit;*/
+/*text-rendering: auto;*/
+/*-webkit-font-smoothing: antialiased;*/
+/*}*/
+
+/*.sui-check:before {*/
+/*content: "\f00c";*/
+/*}*/
+
+.table-pros {
+    border: 1px solid #ddd;
+
+}
+
+.faqBlock {
+    padding: 26px;
+    margin: 30px 0;
+}

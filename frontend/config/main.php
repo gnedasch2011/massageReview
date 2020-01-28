@@ -6,7 +6,7 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-return [
+$config = [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -36,14 +36,47 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'app\modules\url\components\UrlRule'],
             ],
         ],
-        */
+    ],
+    'modules' => [
+        'url' => 'app\modules\url\Module',
+        'category' => [
+            'class' => 'app\modules\category\Module',
+        ],
+        'page' => [
+            'class' => 'app\modules\page\Module',
+        ],
+        'image' => [
+            'class' => 'app\modules\image\Module',
+        ],
+        'site' => [
+            'class' => 'app\modules\site\Module',
+        ],
     ],
     'params' => $params,
 ];
+
+if (YII_ENV_DEV) {
+    $config['bootstrap'][] = 'gii';
+    $config['bootstrap'][] = 'log';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['127.0.0.1'],
+    ];
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+//        'class' => 'app\modules\common\components\debug\Module',
+        'allowedIPs' => ['89.207.92.216', '127.0.0.1', '*'],
+    ];
+
+}
+
+return $config;
