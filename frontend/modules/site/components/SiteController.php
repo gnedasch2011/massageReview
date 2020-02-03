@@ -24,7 +24,6 @@ class SiteController extends \frontend\controllers\SiteController
             $this->view->registerMetaTag(['name' => 'viewport', 'content' => 'width=1230'], 'viewport');
 
             // Состояние корзины
-            $this->view->cart = Yii::$app->cart;
 
             // Устанавливает признак администратора
             $user = Yii::$app->getUser();

@@ -1,0 +1,27 @@
+<h3>FAQ</h3>
+<div class="accordion" id="accordionExample">
+    {% set myVal = ( counter | default(0) ) + 1 %}
+    {% for qustion, answer in faq %}
+        <div class="card">
+            <div class="card-header" id="headingOne{{ myVal }}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button"
+                            data-toggle="collapse" data-target="#collapse{{ myVal }}"
+                            aria-expanded="true" aria-controls="collapse">
+                        {{ qustion }}
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapse{{ myVal }}" class="collapse" aria-labelledby="headingOne{{ myVal }}"
+                 data-parent="#accordionExample">
+                <div class="card-body">
+                    {{ answer }}
+                </div>
+            </div>
+        </div>
+        {% set myVal = ( myVal + 1 ) %}
+    {% endfor %}
+
+
+</div>

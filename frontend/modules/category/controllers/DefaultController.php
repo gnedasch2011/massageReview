@@ -25,12 +25,12 @@ class DefaultController extends SiteController
     {
         $id = \Yii::$app->request->get('id');
         $category = CategoryBase::findOne($id);
-        
+
         if (!$category) {
             throw new NotFoundHttpException();
         }
 
-
+        return $this->render('test.twig', ['test'=>'test']);
 
     }
 }
