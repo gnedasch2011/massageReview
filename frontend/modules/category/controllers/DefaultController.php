@@ -3,6 +3,7 @@
 namespace app\modules\category\controllers;
 
 use app\modules\category\models\CategoryBase;
+use app\modules\item\models\Items;
 use app\modules\site\components\SiteController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -30,7 +31,11 @@ class DefaultController extends SiteController
             throw new NotFoundHttpException();
         }
 
-        return $this->render('test.twig', ['test'=>'test']);
+        $items = Items::getAllItems();
+
+        return $this->render('view', [
+            'items' => $items
+        ]);
 
     }
 }

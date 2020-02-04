@@ -2,6 +2,7 @@
 
 namespace app\modules\item\models;
 
+use app\modules\image\models\NewImage;
 use Yii;
 
 /**
@@ -56,5 +57,39 @@ class Items extends \yii\db\ActiveRecord
             'description' => 'Description',
         ];
     }
+
+    public static function getAllItems()
+    {
+        $query = self::find()
+            ->joinWith([
+                'cons',
+                'pros',
+                'images',
+                'specificationsItems',
+            ]);
+        return $query->asArray()->all();
+    }
+
+    public function getCons()
+    {
+        return $this->hasMany(Cons::className(), ['items_id' => 'id']);
+    }
+
+    public function getPros()
+    {
+        return $this->hasMany(Pros::className(), ['items_id' => 'id']);
+    }
+
+    public function getImages()
+    {
+        return $this->hasMany(NewImage::className(), ['items_id' => 'id']);
+    }
+
+    public function getSpecificationsItems()
+    {
+        return $this->hasMany(SpecificationsItems::className(), ['items_id' => 'id']);
+    }
+
 }
+
 
