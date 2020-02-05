@@ -33,8 +33,8 @@ class Items extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id', 'categoryId'], 'integer'],
+            [['id'], 'integer'],
+            [['categoryId'], 'safe'],
             [['description'], 'string'],
             [['name', 'anchor', 'img', 'link_amazon', 'imgPreview'], 'string', 'max' => 45],
             [['id'], 'unique'],
