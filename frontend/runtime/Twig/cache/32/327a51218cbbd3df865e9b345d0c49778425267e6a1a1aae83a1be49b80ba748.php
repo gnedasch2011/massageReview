@@ -26,124 +26,125 @@ class __TwigTemplate_8f881768e463e47279dac3e9b7fb96defed6a83798b8ed95840a8f0a085
 
     protected function doDisplay(array $context, array $blocks = [])
     {
-        // line 1
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["items"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["good"]) {
-            // line 2
-            echo "    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-        <h3><span name=\"";
-            // line 3
-            echo twig_escape_filter($this->env, $this->getAttribute($context["good"], "anchor", []), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["good"], "name", []), "html", null, true);
-            echo "</span></h3>
-    </div>
-    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center\">
-        <img src=\"";
-            // line 6
-            echo twig_escape_filter($this->env, $this->getAttribute($context["good"], "img", []), "html", null, true);
-            echo "\"
-             alt=\"\">
-    </div>
-
-    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center\">
-        <button type=\"button\" class=\"btn btn-primary amazonGoodsButton\">View Product on Amazon
-        </button>
-    </div>
-
-    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
+        // line 2
+        echo "    ";
+        // line 3
+        echo "        ";
+        // line 4
+        echo "    ";
+        // line 5
+        echo "    ";
+        // line 6
+        echo "        ";
+        // line 7
+        echo "             ";
+        // line 8
+        echo "    ";
+        // line 9
+        echo "
+    ";
+        // line 11
+        echo "        ";
+        // line 12
+        echo "        ";
+        // line 13
+        echo "    ";
+        // line 14
+        echo "
+    ";
+        // line 16
+        echo "        ";
+        // line 17
+        echo "    ";
+        // line 18
+        echo "    ";
+        // line 19
+        echo "        ";
+        // line 20
+        echo "    ";
+        // line 21
+        echo "    ";
+        // line 22
+        echo "        ";
+        // line 23
+        echo "            ";
+        // line 24
+        echo "                ";
+        // line 25
+        echo "            ";
+        // line 26
+        echo "        ";
+        // line 27
+        echo "
         ";
-            // line 16
-            echo $this->getAttribute($context["good"], "description", []);
-            echo "
-    </div>
-    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 \">
-        <h3 class=\"goodsFeatures\">Features</h3>
-    </div>
-    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
-        <ul>
-            ";
-            // line 23
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["good"], "features", []));
-            foreach ($context['_seq'] as $context["_key"] => $context["feature"]) {
-                // line 24
-                echo "                <li>";
-                echo twig_escape_filter($this->env, $context["feature"], "html", null, true);
-                echo "</li>
-            ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['feature'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
-            echo "        </ul>
-
-        <table class=\"table-props\" border=\"0\" width=\"100%\">
-            <tbody>
-            <tr>
-                <th style=\"vertical-align: middle; text-align: left;\" bgcolor=\"#00bf08\" width=\"50%\"
-                    height=\"50\"><span style=\"color: #ffffff;\"><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pros</em></strong></span>
-                </th>
-                <th style=\"vertical-align: middle; text-align: left;\" bgcolor=\"#bf000a\" width=\"50%\"
-                    height=\"50\"><span style=\"color: #ffffff;\"><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cons</em></strong></span>
-                </th>
-            </tr>
-            <tr>
-                <td class=\"table-pros\">
-                    <div class=\"su-list\" style=\"margin-left:0px\">
-                        <ul>
-                            ";
-            // line 42
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["good"], "pros", []));
-            foreach ($context['_seq'] as $context["_key"] => $context["pros"]) {
-                // line 43
-                echo "                                <li><i class=\"sui sui-check\" style=\"color:#38f24a\"></i>";
-                echo twig_escape_filter($this->env, $context["pros"], "html", null, true);
-                echo "
-                                </li>
-                            ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pros'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 46
-            echo "                        </ul>
-                    </div>
-                </td>
-                <td>
-                    <div class=\"su-list\" style=\"margin-left:0px\">
-                        <ul>
-                            ";
-            // line 52
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["good"], "cons", []));
-            foreach ($context['_seq'] as $context["_key"] => $context["cons"]) {
-                // line 53
-                echo "                                <li><i class=\"sui sui-close\" style=\"color:#38f24a\"></i>";
-                echo twig_escape_filter($this->env, $context["cons"], "html", null, true);
-                echo "
-                                </li>
-                            ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cons'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 56
-            echo "                        </ul>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['good'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "            ";
+        // line 30
+        echo "            ";
+        // line 31
+        echo "                ";
+        // line 32
+        echo "                    ";
+        // line 33
+        echo "                ";
+        // line 34
+        echo "                ";
+        // line 35
+        echo "                    ";
+        // line 36
+        echo "                ";
+        // line 37
+        echo "            ";
+        // line 38
+        echo "            ";
+        // line 39
+        echo "                ";
+        // line 40
+        echo "                    ";
+        // line 41
+        echo "                        ";
+        // line 42
+        echo "                            ";
+        // line 43
+        echo "                                ";
+        // line 44
+        echo "                                ";
+        // line 45
+        echo "                            ";
+        // line 46
+        echo "                        ";
+        // line 47
+        echo "                    ";
+        // line 48
+        echo "                ";
+        // line 49
+        echo "                ";
+        // line 50
+        echo "                    ";
+        // line 51
+        echo "                        ";
+        // line 52
+        echo "                            ";
+        // line 53
+        echo "                                ";
+        // line 54
+        echo "                                ";
+        // line 55
+        echo "                            ";
+        // line 56
+        echo "                        ";
+        // line 57
+        echo "                    ";
+        // line 58
+        echo "                ";
+        // line 59
+        echo "            ";
+        // line 60
+        echo "            ";
+        // line 61
+        echo "        ";
+        // line 62
+        echo "    ";
     }
 
     public function getTemplateName()
@@ -151,14 +152,9 @@ class __TwigTemplate_8f881768e463e47279dac3e9b7fb96defed6a83798b8ed95840a8f0a085
         return "item.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  135 => 56,  125 => 53,  121 => 52,  113 => 46,  103 => 43,  99 => 42,  81 => 26,  72 => 24,  68 => 23,  58 => 16,  45 => 6,  37 => 3,  34 => 2,  30 => 1,);
+        return array (  147 => 62,  145 => 61,  143 => 60,  141 => 59,  139 => 58,  137 => 57,  135 => 56,  133 => 55,  131 => 54,  129 => 53,  127 => 52,  125 => 51,  123 => 50,  121 => 49,  119 => 48,  117 => 47,  115 => 46,  113 => 45,  111 => 44,  109 => 43,  107 => 42,  105 => 41,  103 => 40,  101 => 39,  99 => 38,  97 => 37,  95 => 36,  93 => 35,  91 => 34,  89 => 33,  87 => 32,  85 => 31,  83 => 30,  81 => 29,  78 => 27,  76 => 26,  74 => 25,  72 => 24,  70 => 23,  68 => 22,  66 => 21,  64 => 20,  62 => 19,  60 => 18,  58 => 17,  56 => 16,  53 => 14,  51 => 13,  49 => 12,  47 => 11,  44 => 9,  42 => 8,  40 => 7,  38 => 6,  36 => 5,  34 => 4,  32 => 3,  30 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

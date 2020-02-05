@@ -85,6 +85,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<module:[\w-]+>/admin/<action:[\w-]+>' => '<module>/admin/<action>',
                 ['class' => 'app\modules\url\components\UrlRule'],
             ],
         ],
@@ -105,6 +106,9 @@ $config = [
         ],
         'parser' => [
             'class' => 'app\modules\parser\Module',
+        ],
+        'item' => [
+            'class' => 'app\modules\item\Module',
         ],
     ],
     'params' => $params,
