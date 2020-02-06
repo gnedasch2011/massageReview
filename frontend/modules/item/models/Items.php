@@ -90,6 +90,8 @@ class Items extends \yii\db\ActiveRecord
         return $this->hasMany(SpecificationsItems::className(), ['items_id' => 'id']);
     }
 
+
+
 }
 
 

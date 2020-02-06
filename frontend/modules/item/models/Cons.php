@@ -38,7 +38,7 @@ class Cons extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Недостатки',
             'items_id' => 'Items ID',
         ];
     }
