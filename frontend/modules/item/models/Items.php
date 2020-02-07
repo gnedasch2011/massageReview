@@ -4,6 +4,7 @@ namespace app\modules\item\models;
 
 use app\modules\image\models\NewImage;
 use Yii;
+use app\components\model\ActiveRecord;
 
 /**
  * This is the model class for table "items".
@@ -17,7 +18,7 @@ use Yii;
  * @property string|null $imgPreview
  * @property string|null $description
  */
-class Items extends \yii\db\ActiveRecord
+class Items extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -91,6 +92,29 @@ class Items extends \yii\db\ActiveRecord
     }
 
 
+    public function relations()
+    {
+        return [
+            'pros' => [
+                'class' => 'app\modules\item\models\Pros',
+                'multi' => true,
+                'skip' => false,
+            ],
+
+            'specificationsItems' => [
+                'class' => 'app\modules\item\models\Specifications',
+                'multi' => true,
+                'skip' => false,
+            ],
+
+            'cons' => [
+                'class' => 'app\modules\item\models\Cons',
+                'multi' => true,
+                'skip' => false,
+            ],
+        ];
+
+    }
 
 }
 

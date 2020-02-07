@@ -40,7 +40,7 @@ class Pros extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'items_id' => 'Items ID',
-            'name' => 'Name',
+            'name' => 'Особенности',
         ];
     }
 }
