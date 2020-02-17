@@ -1,21 +1,29 @@
-<div class="createInputWrap">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h2><?= $placeholder ;?></h2>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="createInputWrap">
 
-    <?php
+            <?php
 
-    use yii\helpers\Html;
+            use yii\helpers\Html;
 
-    echo Html::input('text', $nameAttr, '', [
-        'class' => 'form-control newField beginTemp',
-        'data-index' => 0,
-        'placeholder' => $placeholder
-    ]);
+            echo Html::input('text', $nameAttr, '', [
+                'class' => 'form-control newField beginTemp',
+                'data-index' => 0,
+                'placeholder' => $placeholder
+            ]);
 
-    ?>
-    <div>
-        <a class="addButton" href="#">Добавить поле</a><br>
-        <a class="removeButton" href="#">Удалить поле</a>
+            ?>
+            <div>
+                <a class="addButton" href="#">Добавить поле</a><br>
+                <a class="removeButton" href="#">Удалить поле</a>
+            </div>
+        </div>
     </div>
 </div>
+
 <?php
 $script = <<< JS
   $(document).on('click','.addButton',function (e) {
@@ -30,7 +38,7 @@ $script = <<< JS
           $(cloneItem).attr('name', nameAttrNew);
           $(cloneItem).attr('data-index', newPos);
          
-         $(cloneItem).appendTo('.createInputWrap');          
+         $(cloneItem).appendTo($(this).parents('.createInputWrap'));          
   })
   
     $(document).on('click','.removeButton',function (e) {

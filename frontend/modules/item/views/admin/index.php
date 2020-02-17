@@ -25,6 +25,12 @@ use yii\widgets\ActiveForm;
                         'placeholder' => "Преимущество",
                     ]) ?>
 
+                  <?= \common\widgets\admin\AddInputWidget::widget([
+                        'model' => new \app\modules\item\models\Cons(),
+                        'attr' => "name",
+                        'placeholder' => "Минусы",
+                    ]) ?>
+
                     <? //= $form->field($model->cons, '[0]name') ?>
 
 

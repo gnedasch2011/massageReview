@@ -16,6 +16,7 @@ class AddInputWidget extends \yii\base\Widget
     public $model;
     public $attr;
     public $placeholder;
+    public $h2;
 
     public function init()
     {
@@ -32,6 +33,7 @@ class AddInputWidget extends \yii\base\Widget
             'attr' => $this->attr,
             'nameAttr' => $nameAttr,
             'placeholder' => $this->placeholder,
+            'h2' => $this->h2,
         ]);
     }
 }
