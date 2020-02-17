@@ -7,6 +7,7 @@ use app\modules\item\models\Cons;
 use app\modules\item\models\Pros;
 use app\modules\item\models\Specifications;
 use app\modules\site\components\SiteController;
+use common\helpers\CommonHelpers;
 use yii\base\Model;
 use yii\web\Controller;
 use Yii;
@@ -16,7 +17,9 @@ use Yii;
  */
 class AdminController extends \app\modules\site\components\AdminController
 {
-/**
+
+
+    /**
      * Renders the index view for the module
      * @return string
      */
@@ -28,11 +31,11 @@ class AdminController extends \app\modules\site\components\AdminController
 
         //загружаем все отношения в модель
         $model->populateAllRelations($model);
-//        echo "<pre>"; print_r($model);die();
+
         AdminModel::loadAll($model, Yii::$app->request->post());
 
+        \common\helpers\CommonHelpers::debugPrint(Yii::$app->request->post());
 
-//
 //        if (AdminModel::loadAll($model, Yii::$app->request->post())) {
 //            $model->pros->save();
 //            $model->images->save();

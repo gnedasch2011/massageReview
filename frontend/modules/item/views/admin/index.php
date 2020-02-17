@@ -18,9 +18,10 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'img') ?>
                     <?= $form->field($model, 'link_amazon') ?>
                     <?= $form->field($model, 'imgPreview') ?>
+
                     <?= \common\widgets\admin\AddInputWidget::widget([
-                        'model' => $model,
-                        'attr' => "pros",
+                        'model' => new \app\modules\item\models\Pros(),
+                        'attr' => "name",
                         'placeholder' => "Преимущество",
                     ]) ?>
 
@@ -30,6 +31,7 @@ use yii\widgets\ActiveForm;
                     <div class="form-group">
                         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
                     </div>
+
                     <?php ActiveForm::end(); ?>
 
                 </div><!-- index -->

@@ -25,7 +25,7 @@ class AddInputWidget extends \yii\base\Widget
     public function run()
     {
 
-        $nameAttr = CommonHelpers::getNameCurrentClass($this->model) . "[][" . $this->attr . "]";
+        $nameAttr = CommonHelpers::getNameCurrentClass($this->model) . "[0][" . $this->attr . "]";
 
         return $this->render(CommonHelpers::getNameCurrentClass($this), [
             'model' => $this->model,
