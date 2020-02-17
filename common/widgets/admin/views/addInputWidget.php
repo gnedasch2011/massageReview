@@ -6,6 +6,7 @@
 
     echo Html::input('text', $nameAttr, '', [
         'class' => 'form-control newField beginTemp',
+        'data-index' => 0,
         'placeholder' => $placeholder
     ]);
 
@@ -18,9 +19,18 @@
 <?php
 $script = <<< JS
   $(document).on('click','.addButton',function (e) {
-         e.preventDefault();
          let cloneItem = $(this).parents('.createInputWrap').find('.beginTemp:eq(0)').clone();
-         $(cloneItem).appendTo('.createInputWrap')          
+         let nameAttr = cloneItem.attr('name');
+         let lastIndexPosition  = $(this).parents('.createInputWrap').find('.beginTemp:last').attr('data-index');
+        
+         let newPos =(Number(lastIndexPosition)+1);
+  
+          nameAttrNew = nameAttr.replace("0", newPos);
+         
+          $(cloneItem).attr('name', nameAttrNew);
+          $(cloneItem).attr('data-index', newPos);
+         
+         $(cloneItem).appendTo('.createInputWrap');          
   })
   
     $(document).on('click','.removeButton',function (e) {
