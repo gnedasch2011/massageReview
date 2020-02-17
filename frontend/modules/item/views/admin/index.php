@@ -18,8 +18,11 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'img') ?>
                     <?= $form->field($model, 'link_amazon') ?>
                     <?= $form->field($model, 'imgPreview') ?>
-
-
+                    <?= \common\widgets\admin\AddInputWidget::widget([
+                        'model' => $model,
+                        'attr' => "pros",
+                        'placeholder' => "Преимущество",
+                    ]) ?>
 
                     <? //= $form->field($model->cons, '[0]name') ?>
 

@@ -28,7 +28,7 @@ class AdminController extends \app\modules\site\components\AdminController
 
         //загружаем все отношения в модель
         $model->populateAllRelations($model);
-
+//        echo "<pre>"; print_r($model);die();
         AdminModel::loadAll($model, Yii::$app->request->post());
 
 
