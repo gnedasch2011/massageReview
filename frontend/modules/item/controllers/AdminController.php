@@ -28,13 +28,14 @@ class AdminController extends \app\modules\site\components\AdminController
 
         $model = new \app\modules\item\models\Items();
 
-
         //загружаем все отношения в модель
         $model->populateAllRelations($model);
 
-        AdminModel::loadAll($model, Yii::$app->request->post());
+        $model->pros = AdminModel::createMultiModels($model->pros, Yii::$app->request->post());
 
-        \common\helpers\CommonHelpers::debugPrint(Yii::$app->request->post());
+        $model->pros = AdminModel::createMultiModels($model->cons, Yii::$app->request->post());
+
+        $model->save();
 
 //        if (AdminModel::loadAll($model, Yii::$app->request->post())) {
 //            $model->pros->save();

@@ -20,7 +20,7 @@ class CommonHelpers extends Model
 
     public static function debugPrint($data)
     {
-        if (\Yii::$app->request->post()) {
+        if (\Yii::$app->request->post("debug")) {
             echo "<pre>";
             print_r($data);
             die();

@@ -3,6 +3,7 @@
 namespace app\modules\item\models;
 
 use app\modules\image\models\NewImage;
+use frontend\modules\item\behaviors\ProsBehavior;
 use Yii;
 use app\components\model\ActiveRecord;
 
@@ -81,6 +82,12 @@ class Items extends ActiveRecord
         return $this->hasMany(Pros::className(), ['items_id' => 'id']);
     }
 
+    public function setPros($value)
+    {
+        $this->pros = $value;
+        return $this;
+    }
+
     public function getImages()
     {
         return $this->hasMany(NewImage::className(), ['items_id' => 'id']);
@@ -115,6 +122,17 @@ class Items extends ActiveRecord
         ];
 
     }
+
+    public function behaviors()
+    {
+        return [
+            'prosBehavior' => [
+                'class' => ProsBehavior::className(),
+            ]
+        ];
+
+    }
+
 
 }
 

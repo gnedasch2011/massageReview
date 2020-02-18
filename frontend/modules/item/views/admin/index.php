@@ -17,6 +17,7 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'anchor') ?>
                     <?= $form->field($model, 'img') ?>
                     <?= $form->field($model, 'link_amazon') ?>
+
                     <?= $form->field($model, 'imgPreview') ?>
 
                     <?= \common\widgets\admin\AddInputWidget::widget([

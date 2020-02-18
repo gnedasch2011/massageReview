@@ -116,6 +116,7 @@ $config = [
 
 if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
+    $config['components']['request']['enableCsrfValidation'] = false;
     $config['bootstrap'][] = 'log';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
