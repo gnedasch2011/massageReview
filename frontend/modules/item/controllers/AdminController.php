@@ -32,11 +32,12 @@ class AdminController extends \app\modules\site\components\AdminController
         $model->populateAllRelations($model);
 
         $model->pros = AdminModel::createMultiModels($model->pros, Yii::$app->request->post());
-
-        $model->pros = AdminModel::createMultiModels($model->cons, Yii::$app->request->post());
+        
+        $model->cons = AdminModel::createMultiModels($model->cons, Yii::$app->request->post());
+        
 
         $model->save();
-
+        die('end');
 //        if (AdminModel::loadAll($model, Yii::$app->request->post())) {
 //            $model->pros->save();
 //            $model->images->save();

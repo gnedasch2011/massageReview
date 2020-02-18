@@ -3,6 +3,7 @@
 namespace app\modules\item\models;
 
 use app\modules\image\models\NewImage;
+use frontend\modules\item\behaviors\ConsBehavior;
 use frontend\modules\item\behaviors\ProsBehavior;
 use Yii;
 use app\components\model\ActiveRecord;
@@ -77,6 +78,12 @@ class Items extends ActiveRecord
         return $this->hasMany(Cons::className(), ['items_id' => 'id']);
     }
 
+    public function setCons($value)
+    {
+        $this->cons = $value;
+        return $this;
+    }
+
     public function getPros()
     {
         return $this->hasMany(Pros::className(), ['items_id' => 'id']);
@@ -128,6 +135,9 @@ class Items extends ActiveRecord
         return [
             'prosBehavior' => [
                 'class' => ProsBehavior::className(),
+            ],
+            'consBehavior' => [
+                'class' => ConsBehavior::className(),
             ]
         ];
 
