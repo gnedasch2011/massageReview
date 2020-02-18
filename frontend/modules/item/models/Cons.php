@@ -27,7 +27,8 @@ class Cons extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'items_id'], 'string', 'max' => 45],
+            [['name'], 'string', 'max' => 45],
+            [['items_id'], 'integer'],
         ];
     }
 

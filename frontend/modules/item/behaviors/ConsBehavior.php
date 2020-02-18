@@ -29,8 +29,9 @@ class ConsBehavior extends Behavior
                 $newPros->attributes = $cons->attributes;
                 $newPros->items_id = $this->owner->id;
             
-                $newPros->save();   
-                echo "<pre>"; print_r($newPros);die();
+                if(!$newPros->save()){
+                    echo "<pre>"; print_r($newPros->errors);die();
+                }
             }
         }
     }
