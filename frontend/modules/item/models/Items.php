@@ -23,7 +23,7 @@ use app\components\model\ActiveRecord;
  */
 class Items extends ActiveRecord
 {
-
+    const NODE_TYPE = 1;
     public $imageFiles;
 
     /**
@@ -63,6 +63,15 @@ class Items extends ActiveRecord
             'imgPreview' => 'Img Preview',
             'description' => 'Description',
         ];
+    }
+
+    public function getNodeType()
+    {
+        if ((null !== self::NODE_TYPE)) {
+            return self::NODE_TYPE;
+        }
+
+        return 1;
     }
 
     public static function getAllItems()

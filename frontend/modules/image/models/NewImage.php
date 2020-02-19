@@ -34,7 +34,7 @@ class NewImage extends \yii\db\ActiveRecord
         return [
             [['items_id', 'nodeType', 'fileName'], 'required'],
             [['items_id', 'action', 'position'], 'integer'],
-            [['nodeType'], 'string', 'max' => 20],
+            [['nodeType'], 'integer', 'max' => 20],
             [['fileName', 'alt', 'title'], 'string', 'max' => 255],
         ];
     }

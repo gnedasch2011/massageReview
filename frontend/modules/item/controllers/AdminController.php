@@ -40,25 +40,7 @@ class AdminController extends \app\modules\site\components\AdminController
 //        $ImageLoader->load(\Yii::$app->request->post());
       
         $model->imageFiles = UploadedFile::getInstances($ImageLoader, 'imageFiles');
-
         $model->save();
-//        if (AdminModel::loadAll($model, Yii::$app->request->post())) {
-//            $model->pros->save();
-//            $model->images->save();
-//            $model->specificationsItems->save();
-//
-//            if (!$model->save()) {
-//                echo "<pre>";
-//                print_r($model->errors);
-//                die();
-//            }
-//            // form inputs are valid, do something here
-//            return;
-//        } else {
-//            echo "<pre>";
-//            print_r($model->errors);
-//            die();
-//        }
 
         return $this->render('index', [
             'model' => $model,
