@@ -35,11 +35,14 @@ class AdminModel extends Model
 
     public static function createMultiModels($multiModels, $post)
     {
+
         if ($multiModels) {
             $first = reset($multiModels);
             $shortName = $first->formName();
             $modelName = "\\" . $first->className();
         }
+
+        $newModels  = [];
 
         if (isset($post[$shortName])) {
             $countModels = count($post[$shortName]);
@@ -48,7 +51,9 @@ class AdminModel extends Model
             }
         }
 
-        Model::loadMultiple($newModels, $post);
+        if($newModels){
+            Model::loadMultiple($newModels, $post);
+        }
 
         return $newModels;
 

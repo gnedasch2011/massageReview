@@ -3,6 +3,7 @@
 namespace app\modules\item\controllers;
 
 use app\components\model\AdminModel;
+use app\modules\image\models\ImageLoader;
 use app\modules\item\models\Cons;
 use app\modules\item\models\Pros;
 use app\modules\item\models\Specifications;
@@ -11,6 +12,7 @@ use common\helpers\CommonHelpers;
 use yii\base\Model;
 use yii\web\Controller;
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * Default controller for the `item` module
@@ -32,12 +34,14 @@ class AdminController extends \app\modules\site\components\AdminController
         $model->populateAllRelations($model);
 
         $model->pros = AdminModel::createMultiModels($model->pros, Yii::$app->request->post());
-        
         $model->cons = AdminModel::createMultiModels($model->cons, Yii::$app->request->post());
-        
+
+        $ImageLoader = new ImageLoader();
+//        $ImageLoader->load(\Yii::$app->request->post());
+      
+        $model->imageFiles = UploadedFile::getInstances($ImageLoader, 'imageFiles');
 
         $model->save();
-        die('end');
 //        if (AdminModel::loadAll($model, Yii::$app->request->post())) {
 //            $model->pros->save();
 //            $model->images->save();
@@ -58,6 +62,7 @@ class AdminController extends \app\modules\site\components\AdminController
 
         return $this->render('index', [
             'model' => $model,
+            'ImageLoader' => $ImageLoader,
         ]);
 
     }

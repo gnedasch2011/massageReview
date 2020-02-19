@@ -32,6 +32,9 @@ use yii\widgets\ActiveForm;
                         'placeholder' => "Минусы",
                     ]) ?>
 
+                    <h2>Загрузка фото</h2>
+                    <?= $form->field($ImageLoader, 'imageFiles[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
+<!--                    --><?//= $form->field($ImageLoader, '[0]photoArr')->fileInput() ;?>
                     <? //= $form->field($model->cons, '[0]name') ?>
 
 

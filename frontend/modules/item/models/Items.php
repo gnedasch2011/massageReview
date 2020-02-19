@@ -4,6 +4,7 @@ namespace app\modules\item\models;
 
 use app\modules\image\models\NewImage;
 use frontend\modules\item\behaviors\ConsBehavior;
+use frontend\modules\item\behaviors\ImageFilesBehavior;
 use frontend\modules\item\behaviors\ProsBehavior;
 use Yii;
 use app\components\model\ActiveRecord;
@@ -22,6 +23,9 @@ use app\components\model\ActiveRecord;
  */
 class Items extends ActiveRecord
 {
+
+    public $imageFiles;
+
     /**
      * {@inheritdoc}
      */
@@ -138,11 +142,13 @@ class Items extends ActiveRecord
             ],
             'consBehavior' => [
                 'class' => ConsBehavior::className(),
-            ]
+            ],
+            'imageFiles' => [
+                'class' => ImageFilesBehavior::className(),
+            ],
         ];
 
     }
-
 
 }
 
