@@ -27,7 +27,6 @@ class AdminController extends \app\modules\site\components\AdminController
      */
     public function actionIndex()
     {
-
         $model = new \app\modules\item\models\Items();
 
         //загружаем все отношения в модель
@@ -36,10 +35,13 @@ class AdminController extends \app\modules\site\components\AdminController
         $model->pros = AdminModel::createMultiModels($model->pros, Yii::$app->request->post());
         $model->cons = AdminModel::createMultiModels($model->cons, Yii::$app->request->post());
 
+
+        $model->load(Yii::$app->request->post());
+
         $ImageLoader = new ImageLoader();
-//        $ImageLoader->load(\Yii::$app->request->post());
-      
+
         $model->imageFiles = UploadedFile::getInstances($ImageLoader, 'imageFiles');
+
         $model->save();
 
         return $this->render('index', [

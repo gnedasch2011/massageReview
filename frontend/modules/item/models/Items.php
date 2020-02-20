@@ -3,6 +3,7 @@
 namespace app\modules\item\models;
 
 use app\modules\image\models\NewImage;
+use common\abstractComponents\behaviors\SlugBehaviors;
 use frontend\modules\item\behaviors\ConsBehavior;
 use frontend\modules\item\behaviors\ImageFilesBehavior;
 use frontend\modules\item\behaviors\ProsBehavior;
@@ -34,6 +35,25 @@ class Items extends ActiveRecord
         return 'items';
     }
 
+    public function behaviors()
+    {
+        return [
+            'prosBehavior' => [
+                'class' => ProsBehavior::className(),
+            ],
+            'consBehavior' => [
+                'class' => ConsBehavior::className(),
+            ],
+            'imageFiles' => [
+                'class' => ImageFilesBehavior::className(),
+            ],
+            'slug' => [
+                'class' => SlugBehaviors::className(),
+            ]
+        ];
+
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -42,7 +62,7 @@ class Items extends ActiveRecord
         return [
             [['id'], 'integer'],
             [['categoryId'], 'safe'],
-            [['description'], 'string'],
+            [['description', 'slug'], 'string'],
             [['name', 'anchor', 'img', 'link_amazon', 'imgPreview'], 'string', 'max' => 45],
             [['id'], 'unique'],
         ];
@@ -62,6 +82,7 @@ class Items extends ActiveRecord
             'link_amazon' => 'Link Amazon',
             'imgPreview' => 'Img Preview',
             'description' => 'Description',
+            'slug' => 'slug',
         ];
     }
 
@@ -143,21 +164,7 @@ class Items extends ActiveRecord
 
     }
 
-    public function behaviors()
-    {
-        return [
-            'prosBehavior' => [
-                'class' => ProsBehavior::className(),
-            ],
-            'consBehavior' => [
-                'class' => ConsBehavior::className(),
-            ],
-            'imageFiles' => [
-                'class' => ImageFilesBehavior::className(),
-            ],
-        ];
 
-    }
 
 }
 

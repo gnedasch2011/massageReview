@@ -42,7 +42,8 @@ class ImageFilesBehavior extends Behavior
                 $newImage->fileName = $this->saveFile($file);
                 $newImage->position = $position;
                 $position++;
-                
+
+
                 $newImage->save();
                 if(!$newImage->save()){
                     echo "<pre>"; print_r($newImage->errors);die();
